@@ -1,12 +1,12 @@
-// GIVEN a command-line application that accepts user input
 const fs = require('fs')
-const { writeFile } = fs.promises  //*new hotness replacing sync
 const { prompt } = require('inquirer');
-const { questions, Manager, Intern, Engineer } = require('./lib');
+const { questions, Manager, Intern, Engineer, mgrQuestions } = require('./lib');
 const genHTML = require('./src/generateHTML');
+
+const { writeFile } = fs.promises  //*new hotness replacing writeFileSync
 let teamMembers = [];
 
-function initQuestions(){
+function beginBuild(){
 prompt(questions)
 .then(response => {
   switch(response.newEmp){
@@ -26,7 +26,6 @@ prompt(questions)
   nextStep();
 }) 
 }
-
 
 //*effectively built a loop between these two functions until they select "nope"
 function nextStep(){
@@ -48,4 +47,4 @@ function nextStep(){
   })
 }
 
-initQuestions();
+beginBuild();
