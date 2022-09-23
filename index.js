@@ -9,7 +9,7 @@ let teamMembers = [];
 function beginBuild() {
   prompt(mgrQuestions)
     .then(response => {
-      const mgrBody = new Manager(response.name, response.email, response.id, response.officeNumb)
+      const mgrBody = new Manager(response.name, response.email, response.id, response.officeNumber)
       teamMembers.push(mgrBody);
       console.table(mgrBody);
       nextStep();
@@ -32,7 +32,6 @@ function nextStep() {
           nextStep();
           break;
         case "none": //! AN ISSUE HERE - NONE STILL ASKS FOR NAME, ETC
-          console.table(teamMembers)
           writeFile('dist/index.html', genHTML(teamMembers), (err) => {
             console.error(err)
           })
@@ -46,4 +45,3 @@ function nextStep() {
 
 beginBuild();
 
-//*after push, re-init
