@@ -1,5 +1,4 @@
 //build other specific functions for mgr, eng, int
-//*build for loop?
 function genMgr(managers) {
   return `
   <h1>${managers[0].name}</h1>
