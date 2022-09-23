@@ -1,24 +1,4 @@
-//build other specific functions for mgr, eng, int
-function genMgr(managers) {
-  return `
-  <h1>${managers[0].name}</h1>
-  `;
-}
 
-function genEngineer(engineers) {
-  return `
-  <h1>${engineers[0].name}</h1>
-  `;
-}
-
-function genIntern(interns) {
-  return `
-  <h1>${interns[0].name}</h1>
-  `;
-}
-
-function genHTML(teamMembers) {
-  return `
 //   <!DOCTYPE html>
 //   <html lang="en">
 //   <head>
@@ -35,20 +15,21 @@ function genHTML(teamMembers) {
 //     <title>Team Members</title>
 //   </head>
 // <body>
-// ${genMgr(teamMembers.filter((member) => member.getRole() === "Manager"))}
+// 
+  <h1>j</h1>
+  
 
-// ${genEngineer(teamMembers.filter((member) => member.getRole() === "Engineer"))}
+// 
+  <h1>asdf1as</h1>
+  
 
-// ${genIntern(teamMembers.filter((member) => member.getRole() === "Intern"))}
+// 
+  <h1>sdf</h1>
+  
 // </body>
 // </html>
 
 
 
 
-  `;
-}
-
-//array method for loop + filter()
-
-module.exports = genHTML;
+  

@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { prompt } = require('inquirer');
-const { questions, Manager, Intern, Engineer, mgrQuestions } = require('./lib');
+const { questions, Manager, Intern, Engineer, mgrQuestions, intQuestions, engQuestions } = require('./lib');
 const genHTML = require('./src/generateHTML');
 
 const { writeFile } = fs.promises  //*new hotness replacing writeFileSync
@@ -12,7 +12,7 @@ function beginBuild() {
       const mgrBody = new Manager(response.name, response.email, response.id, response.officeNumber)
       teamMembers.push(mgrBody);
       console.table(mgrBody);
-      nextStep();
+      return nextStep();
     })
 }
 
@@ -22,24 +22,38 @@ function nextStep() {
     .then(response => {
       switch (response.newEmp) {
         case "Engineer":
-          const empEngineer = new Engineer(response.name, response.email, response.id, response.github)
-          teamMembers.push(empEngineer);
-          nextStep();
+          buildEng();
           break;
         case "Intern":
-          const empIntern = new Intern(response.name, response.email, response.id, response.school)
-          teamMembers.push(empIntern);
-          nextStep();
+          buildInt();
           break;
-        case "none": //! AN ISSUE HERE - NONE STILL ASKS FOR NAME, ETC
-          writeFile('dist/index.html', genHTML(teamMembers), (err) => {
+        default:
+          return writeFile('dist/index.html', genHTML(teamMembers), (err) => {
             console.error(err)
           })
             .then(response => {
               console.log("Job's done.")
             })
-          break;
+
       }
+    })
+}
+
+function buildEng() {
+  prompt(engQuestions)
+    .then(response => {
+      const empEngineer = new Engineer(response.name, response.email, response.id, response.github)
+      teamMembers.push(empEngineer);
+      return nextStep();
+    })
+}
+
+function buildInt() {
+  prompt(intQuestions)
+    .then(response => {
+      const empIntern = new Intern(response.name, response.email, response.id, response.school)
+      teamMembers.push(empIntern);
+      return nextStep();
     })
 }
 
