@@ -28,7 +28,7 @@ function genEngineer(engineers) {
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${member.id}</li>
-    <li class="list-group-item">Email: <a href="${member.email}"></a></li>
+    <li class="list-group-item">Email: <a href="mailto:${member.email}">${member.email}</a></li>
     <li class="list-group-item">GitHub: ${member.github}</li>
   </ul>
   </div>
@@ -49,7 +49,7 @@ function genIntern(interns) {
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${member.id}</li>
-    <li class="list-group-item">Email: <a href='${member.email}'></a></li>
+    <li class="list-group-item">Email: <a href="mailto:${member.email}">${member.email}</a></li>
     <li class="list-group-item">School: ${member.school}</li>
   </ul>
   </div>
