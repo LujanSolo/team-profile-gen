@@ -3,7 +3,7 @@ function genMgr(managers) {
   return `
   <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${managers[0].name}</h5>
+    <h5 class="card-title"><i class="fa-solid fa-mug-hot">  ${managers[0].name}</h5>
     <p class="card-text">Manager</p>
   </div>
   <ul class="list-group list-group-flush">
@@ -23,7 +23,7 @@ function genEngineer(engineers) {
   `
   <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title"><i style="font-size:24px" class="fa">&#xf0f4;</i>${member.name}</h5>
+    <h5 class="card-title"><i class="fa-sharp fa-solid fa-glasses-round"></i>  ${member.name}</h5>
     <p class="card-text">Engineer</p>
   </div>
   <ul class="list-group list-group-flush">
@@ -44,7 +44,7 @@ function genIntern(interns) {
   `
   <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title p-3 mb-2 bg-primary text-white">${member.name}</h5>
+    <h5 class="card-title p-3 mb-2 bg-primary text-white"><i class="fa-solid fa-user-graduate"></i>  ${member.name}</h5>
     <p class="card-text">Intern</p>
   </div>
   <ul class="list-group list-group-flush">
