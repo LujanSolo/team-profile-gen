@@ -9,7 +9,7 @@
 
 ## Description
   
-This Node application takes information about employees on a software development team and generates and HTML webpage that displays summarized cards for each individual. Teams are centered on a Manager and seeded with Engineers and Interns. Managers have an Office Number as an additional detail added to their card, Engineers have a link to their GitHub, and Interns have their school’s name.  The application files include test files to ensure your code and input are working properly. 
+This Node application takes information about employees on a software development team and generates an HTML webpage that displays summarized cards for each individual. Teams are centered on a Manager and seeded with Engineers and Interns. Managers have an Office Number as an additional detail added to their card, Engineers have a link to their GitHub, and Interns have their School Name added.  The application files include tests to ensure your code and input are working properly. 
 
 ## Table of Contents
 
