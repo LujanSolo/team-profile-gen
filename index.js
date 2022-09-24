@@ -16,7 +16,6 @@ function beginBuild() {
     })
 }
 
-//*effectively built a loop between these two functions until they select "nope"
 function nextStep() {
   prompt(questions)
     .then(response => {
@@ -28,13 +27,12 @@ function nextStep() {
           buildInt();
           break;
         default:
-          return writeFile('dist/index.html', genHTML(teamMembers), (err) => {
+          writeFile('dist/index.html', genHTML(teamMembers), (err) => {
             console.error(err)
           })
             .then(response => {
               console.log("Job's done.")
             })
-
       }
     })
 }
