@@ -2,9 +2,9 @@
 function genMgr(managers) {
   return `
   <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><i class="fa-solid fa-mug-hot">  ${managers[0].name}</h5>
-    <p class="card-text">Manager</p>
+  <div class="card-body bg-primary text-white">
+    <h4 class="card-title">${managers[0].name}</h4>
+    <h5 class="card-text"><i class="fa-solid fa-mug-hot"></i>Manager</h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${managers[0].id}</li>
@@ -22,8 +22,8 @@ function genEngineer(engineers) {
   return engineers.map((member) =>
   `
   <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><i class="fa-sharp fa-solid fa-glasses-round"></i>  ${member.name}</h5>
+  <div class="card-body bg-primary text-white">
+    <h5 class="card-title"><i class="fa-solid fa-glasses-round"></i>  ${member.name}</h5>
     <p class="card-text">Engineer</p>
   </div>
   <ul class="list-group list-group-flush">
@@ -43,7 +43,7 @@ function genIntern(interns) {
   return interns.map((member) =>  
   `
   <div class="card" style="width: 18rem;">
-  <div class="card-body">
+  <div class="card-body bg-primary text-white">
     <h5 class="card-title p-3 mb-2 bg-primary text-white"><i class="fa-solid fa-user-graduate"></i>  ${member.name}</h5>
     <p class="card-text">Intern</p>
   </div>
@@ -96,3 +96,4 @@ module.exports = genHTML;
 
 //TODO: Style cards in their individual functions. 
 //TODO: Style card placement in <body> of genHTML function
+//todo: fix icon issues with engineer
