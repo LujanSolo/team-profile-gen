@@ -91,7 +91,7 @@ function genHTML(teamMembers) {
   <header>
     <h1 id="masthead" class="text-center text-white py-2">My Team</h1>
   </header>
-<body>
+<body class="bg-light">
 <div>
 ${genMgr(teamMembers.filter((member) => member.getRole() === "Manager"))}
 
