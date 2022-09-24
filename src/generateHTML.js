@@ -1,60 +1,72 @@
 //build other specific functions for mgr, eng, int
 function genMgr(managers) {
   return `
-  <div class="card" style="width: 18rem;">
+  <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
   <div class="card-body bg-primary text-white">
     <h4 class="card-title">${managers[0].name}</h4>
     <h5 class="card-text"><i class="fa-solid fa-mug-hot"></i>Manager</h5>
   </div>
+  <div class="m-3 border border-info">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${managers[0].id}</li>
     <li class="list-group-item">Email: <a href="mailto:${managers[0].email}">${managers[0].email}</a></li>
     <li class="list-group-item">Office number: ${managers[0].officeNumber}</li>
   </ul>
   </div>
+  </div>
   `;
 }
 // join function
 function genEngineer(engineers) {
   if (engineers.length === 0) {
-    return '';
+    return "";
   }
-  return engineers.map((member) =>
-  `
-  <div class="card" style="width: 18rem;">
+  return engineers
+    .map(
+      (member) =>
+        `
+  <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
   <div class="card-body bg-primary text-white">
     <h5 class="card-title"><i class="fa-solid fa-glasses-round"></i>  ${member.name}</h5>
     <p class="card-text">Engineer</p>
   </div>
+  <div class="m-3 border border-info">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${member.id}</li>
     <li class="list-group-item">Email: <a href="mailto:${member.email}">${member.email}</a></li>
     <li class="list-group-item">GitHub: ${member.github}</li>
   </ul>
   </div>
+  </div>
   `
-  ).join('')
+    )
+    .join("");
 }
 
 function genIntern(interns) {
   if (interns.length === 0) {
-    return '';
+    return "";
   }
-  return interns.map((member) =>  
-  `
-  <div class="card" style="width: 18rem;">
+  return interns
+    .map(
+      (member) =>
+        `
+  <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
   <div class="card-body bg-primary text-white">
     <h5 class="card-title p-3 mb-2 bg-primary text-white"><i class="fa-solid fa-user-graduate"></i>  ${member.name}</h5>
     <p class="card-text">Intern</p>
   </div>
+  <div class="m-3 border border-info">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${member.id}</li>
     <li class="list-group-item">Email: <a href="mailto:${member.email}">${member.email}</a></li>
     <li class="list-group-item">School: ${member.school}</li>
   </ul>
   </div>
+  </div>
   `
-  ).join('')
+    )
+    .join("");
 }
 
 function genHTML(teamMembers) {
@@ -80,13 +92,13 @@ function genHTML(teamMembers) {
     <h1 id="masthead" class="text-center text-white py-2">My Team</h1>
   </header>
 <body>
-
+<div>
 ${genMgr(teamMembers.filter((member) => member.getRole() === "Manager"))}
 
 ${genEngineer(teamMembers.filter((member) => member.getRole() === "Engineer"))}
 
 ${genIntern(teamMembers.filter((member) => member.getRole() === "Intern"))}
-
+</div>
 </body>
 </html>
   `;
@@ -94,6 +106,6 @@ ${genIntern(teamMembers.filter((member) => member.getRole() === "Intern"))}
 
 module.exports = genHTML;
 
-//TODO: Style cards in their individual functions. 
+//TODO: Style cards in their individual functions.
 //TODO: Style card placement in <body> of genHTML function
 //todo: fix icon issues with engineer
