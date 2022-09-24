@@ -1,8 +1,8 @@
 //build other specific functions for mgr, eng, int
 function genMgr(managers) {
   return `
-  <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
-  <div class="card-body bg-primary text-white">
+  <div class="card bg-light shadow-lg p-1 bg-white rounded" style="width: 18rem;">
+  <div class="card-body bg-primary text-white rounded-2">
     <h4 class="card-title">${managers[0].name}</h4>
     <h5 class="card-text"><i class="fa-solid fa-mug-hot"></i>Manager</h5>
   </div>
@@ -25,10 +25,10 @@ function genEngineer(engineers) {
     .map(
       (member) =>
         `
-  <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
-  <div class="card-body bg-primary text-white">
-    <h5 class="card-title"><i class="fa-solid fa-glasses-round"></i>${member.name}</h5>
-    <p class="card-text">Engineer</p>
+  <div class="card bg-light shadow-lg p-1 bg-white rounded" style="width: 18rem;">
+  <div class="card-body bg-primary text-white rounded-2">
+    <h5 class="card-title"></i>${member.name}</h5>
+    <p class="card-text"><i class="fa-solid fa-glasses-round"></i>Engineer</p>
   </div>
   <div class="m-3 border border-info">
   <ul class="list-group list-group-flush">
@@ -51,10 +51,10 @@ function genIntern(interns) {
     .map(
       (member) =>
         `
-  <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
-  <div class="card-body bg-primary text-white">
-    <h5 class="card-title p-3 mb-2 bg-primary text-white"><i class="fa-solid fa-user-graduate"></i>${member.name}</h5>
-    <p class="card-text">Intern</p>
+  <div class="card bg-light shadow-lg p-1 bg-white rounded" style="width: 18rem;">
+  <div class="card-body bg-primary text-white rounded-2">
+    <h5 class="card-title p-3 mb-2 bg-primary text-white">${member.name}</h5>
+    <p class="card-text"><i class="fa-solid fa-user-graduate"></i>Intern</p>
   </div>
   <div class="m-3 border border-info">
   <ul class="list-group list-group-flush">
