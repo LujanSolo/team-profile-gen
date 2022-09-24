@@ -1,4 +1,4 @@
-//build other specific functions for mgr, eng, int
+
 function genMgr(managers) {
   return `
   <div class="card bg-light shadow-lg p-1 bg-white rounded mb-4" style="width: 18rem;">
@@ -6,7 +6,7 @@ function genMgr(managers) {
     <h4 class="card-title">${managers[0].name}</h4>
     <h5 class="card-text"><i class="fa-solid fa-mug-hot me-2"></i>Manager</h5>
   </div>
-  <div class="m-3 border border-info">
+  <div class="m-3 border border-secondary border-opacity-25">
   <ul id="details" class="list-group list-group-flush">
     <li class="list-group-item">ID: ${managers[0].id}</li>
     <li class="list-group-item">Email: <a href="mailto:${managers[0].email}">${managers[0].email}</a></li>
@@ -16,7 +16,7 @@ function genMgr(managers) {
   </div>
   `;
 }
-// join function
+
 function genEngineer(engineers) {
   if (engineers.length === 0) {
     return "";
@@ -30,7 +30,7 @@ function genEngineer(engineers) {
     <h4 class="card-title"></i>${member.name}</h4>
     <h5 class="card-text text"><i class="fa-solid fa-glasses me-2"></i>Engineer</h5>
   </div>
-  <div class="m-3 border border-info">
+  <div class="m-3 border border-secondary border-opacity-25">
   <ul id="details" class="list-group list-group-flush">
     <li class="list-group-item">ID: ${member.id}</li>
     <li class="list-group-item">Email: <a href="mailto:${member.email}">${member.email}</a></li>
@@ -56,7 +56,7 @@ function genIntern(interns) {
     <h4 class="card-title">${member.name}</h4>
     <h5 class="card-text"><i class="fa-solid fa-user-graduate me-2"></i>Intern</h5>
   </div>
-  <div class="m-3 border border-info">
+  <div class="m-3 border border-secondary border-opacity-25">
   <ul id="details" class="list-group list-group-flush">
     <li class="list-group-item">ID: ${member.id}</li>
     <li class="list-group-item">Email: <a href="mailto:${member.email}">${member.email}</a></li>
@@ -111,6 +111,4 @@ function genHTML(teamMembers) {
 
 module.exports = genHTML;
 
-//todo MAKE github username a link
-//todo CHANGE "exit" to "BUILD TEAM"
 //todo ADD validation for input fields to ensure user input matches expected format

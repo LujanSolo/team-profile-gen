@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { prompt } = require('inquirer');
-const { questions, Manager, Intern, Engineer, mgrQuestions, intQuestions, engQuestions } = require('./lib');
+const { addEmployee, Manager, Intern, Engineer, mgrQuestions, intQuestions, engQuestions } = require('./lib');
 const genHTML = require('./src/generateHTML');
 
 const { writeFile } = fs.promises  //*new hotness replacing writeFileSync
@@ -16,7 +16,7 @@ function beginBuild() {
 }
 
 function nextStep() {
-  prompt(questions)
+  prompt(addEmployee)
     .then(response => {
       switch (response.newEmp) {
         case "Engineer":
