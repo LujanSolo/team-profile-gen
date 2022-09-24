@@ -9,9 +9,8 @@ let teamMembers = [];
 function beginBuild() {
   prompt(mgrQuestions)
     .then(response => {
-      const mgrBody = new Manager(response.name, response.email, response.id, response.officeNumber)
+      const mgrBody = new Manager(response.name, response.id, response.email, response.officeNumber)
       teamMembers.push(mgrBody);
-      console.table(mgrBody);
       return nextStep();
     })
 }
@@ -40,7 +39,7 @@ function nextStep() {
 function buildEng() {
   prompt(engQuestions)
     .then(response => {
-      const empEngineer = new Engineer(response.name, response.email, response.id, response.github)
+      const empEngineer = new Engineer(response.name, response.id, response.email, response.github)
       teamMembers.push(empEngineer);
       return nextStep();
     })
@@ -49,7 +48,7 @@ function buildEng() {
 function buildInt() {
   prompt(intQuestions)
     .then(response => {
-      const empIntern = new Intern(response.name, response.email, response.id, response.school)
+      const empIntern = new Intern(response.name, response.id, response.email, response.school)
       teamMembers.push(empIntern);
       return nextStep();
     })
