@@ -27,7 +27,7 @@ function genEngineer(engineers) {
         `
   <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
   <div class="card-body bg-primary text-white">
-    <h5 class="card-title"><i class="fa-solid fa-glasses-round"></i>  ${member.name}</h5>
+    <h5 class="card-title"><i class="fa-solid fa-glasses-round"></i>${member.name}</h5>
     <p class="card-text">Engineer</p>
   </div>
   <div class="m-3 border border-info">
@@ -53,7 +53,7 @@ function genIntern(interns) {
         `
   <div class="card m-5 bg-light shadow p-3 bg-white rounded" style="width: 18rem;">
   <div class="card-body bg-primary text-white">
-    <h5 class="card-title p-3 mb-2 bg-primary text-white"><i class="fa-solid fa-user-graduate"></i>  ${member.name}</h5>
+    <h5 class="card-title p-3 mb-2 bg-primary text-white"><i class="fa-solid fa-user-graduate"></i>${member.name}</h5>
     <p class="card-text">Intern</p>
   </div>
   <div class="m-3 border border-info">
@@ -92,13 +92,22 @@ function genHTML(teamMembers) {
     <h1 id="masthead" class="text-center text-white py-2">My Team</h1>
   </header>
 <body class="bg-light">
-<div>
-${genMgr(teamMembers.filter((member) => member.getRole() === "Manager"))}
 
-${genEngineer(teamMembers.filter((member) => member.getRole() === "Engineer"))}
+<div class="container">
 
-${genIntern(teamMembers.filter((member) => member.getRole() === "Intern"))}
+<div class="row">
+    <div class="col">
+      ${genMgr(teamMembers.filter((member) => member.getRole() === "Manager"))}
+    </div>
+    <div class="col">
+      ${genEngineer(teamMembers.filter((member) => member.getRole() === "Engineer"))}
+    </div>
+    <div class="col">
+      ${genIntern(teamMembers.filter((member) => member.getRole() === "Intern"))}
+    </div>
+  </div>
 </div>
+
 </body>
 </html>
   `;
