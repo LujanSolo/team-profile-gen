@@ -1,7 +1,12 @@
 #masthead {
-  background-image: linear-gradient(
+  background-color: red;
+  /* background-image: linear-gradient(
     to left,
     rgb(193, 4, 42),
     rgb(245, 245, 153)
-  );
+  ); */
+}
+
+#details {
+  font-size: 14px;
 }
