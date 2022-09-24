@@ -23,7 +23,7 @@ function genEngineer(engineers) {
   `
   <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${member.name}</h5>
+    <h5 class="card-title"><i style="font-size:24px" class="fa">&#xf0f4;</i>${member.name}</h5>
     <p class="card-text">Engineer</p>
   </div>
   <ul class="list-group list-group-flush">
@@ -70,6 +70,7 @@ function genHTML(teamMembers) {
    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
  <!-- GOOGLE FONTS LINKED -->
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <script src="https://kit.fontawesome.com/2d308f669c.js" crossorigin="anonymous"></script>
  <link href="https://fonts.googleapis.com/css2?family=Recursive:ital@0;1&display=swap" rel="stylesheet" />
  <link rel="stylesheet" href="style.css" />
   <title>Team Members</title>
@@ -92,3 +93,6 @@ ${genIntern(teamMembers.filter((member) => member.getRole() === "Intern"))}
 }
 
 module.exports = genHTML;
+
+//TODO: Style cards in their individual functions. 
+//TODO: Style card placement in <body> of genHTML function
