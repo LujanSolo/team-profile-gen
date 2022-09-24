@@ -5,7 +5,7 @@
 ## Quick Links
 [GitHub Repo for TPG](https://github.com/LujanSolo/team-profile-gen)
 
-[Video Walk-through]()
+[Video Walk-through](https://drive.google.com/file/d/1xeHybVMSs_UkJ7zy0WtVX5D5d_z4Hgjm/view)
 
 ## Description
   
