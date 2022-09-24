@@ -33,7 +33,7 @@ function genEngineer(engineers) {
   </ul>
   </div>
   `
-  )
+  ).join('')
 }
 
 function genIntern(interns) {
@@ -44,7 +44,7 @@ function genIntern(interns) {
   `
   <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${member.name}</h5>
+    <h5 class="card-title p-3 mb-2 bg-primary text-white">${member.name}</h5>
     <p class="card-text">Intern</p>
   </div>
   <ul class="list-group list-group-flush">
@@ -54,7 +54,7 @@ function genIntern(interns) {
   </ul>
   </div>
   `
-  )
+  ).join('')
 }
 
 function genHTML(teamMembers) {
